@@ -1,0 +1,43 @@
+int status(String status1) {
+
+        if(status1.equals("Delivered"))
+
+        return 4;
+
+        else if(status1.equals("OrderPlaced"))
+
+               return 1;
+
+        else if(status1.equals("packagedDone"))
+
+               return 2;
+
+        else
+
+               return 3;
+
+ }
+
+ 
+
+ 
+
+ @Override
+
+ public void updateStatus(int merchantId, SoldItems soldItems, String string) {
+
+        //  TODO Auto-generated method stub
+
+        int soldstatus=status(soldItems.getStatus());
+
+        int updatedstatus=status(string);
+
+        if(updatedstatus>soldstatus)
+
+        {
+
+               soldItems.setStatus(string);
+
+        }
+
+ }
